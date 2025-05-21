@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жапсырма тырнақ</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="shortcut icon" href="images/fav-icon.jpg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+
+    <!--==navigation=======================-->
+    <nav class="navigation">
+        <a href="index.html" class="logo">
+            <img alt="logo" src="images/logo.jpg">
+        </a>
+        <form class="search-box">
+            <input type="text" placeholder="Өнім іздеу..." required/>
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <div class="nav-btns">
+            <a href="#" class="nav-user"><i class="fa-regular fa-user"></i></a>
+            <a href="cart.html" class="nav-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </nav>
+
+    <!--==Product Details=======================-->
+    <section id="product_details">
+        <div class="d-product-img">
+            <img alt="Жапсырма тырнақ" src="images/n3.jpg"/>
+        </div>
+        <div class="d-product-text">
+            <span class="category">Cosmetic > Nail</span>
+            <strong>Жапсырма тырнақ</strong>
+            <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i>
+                <span>50 пікір</span>
+            </span>
+            <p>Әйелдерге арналған күлгін түсті жасанды тырнақтар жиынтығы. Мерекелік және сәнді көрініс үшін мінсіз таңдау.</p>
+            <span class="price">2000₸ </span>
+            <div class="quantity">
+                <span>Саны: </span>
+                <input type="number" value="1"/>
+            </div>
+            <a href="#" id="addToCart">Себетке қосу</a>
+        </div>
+    </section>
+
+    <!--==Footer=======================-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-company-box">
+                <a href="#" class="footer-logo">Ainiet</a>
+                <p>“Ainiet” – табиғи сұлулықты айқындайтын сенімді серігіңіз. Біздің өнімдеріміз – табиғи құрам, жоғары сапа және заманауи тенденциялардың үйлесімі.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-link-box">
+                <strong>Сілтемелер</strong>
+                <ul>
+                    <li><a href="index.html">Басты бет</a></li>
+                    <li><a href="#">Біз туралы</a></li>
+                    <li><a href="#">Байланыс</a></li>
+                    <li><a href="#">Қызметтер</a></li>
+                </ul>
+            </div>
+            <div class="footer-link-box">
+                <strong>Өнімдер</strong>
+                <ul>
+                    <li><a href="#">Тері күтімі</a></li>
+                    <li><a href="#">Шаш күтімі</a></li>
+                    <li><a href="#">Тырнақ лактары</a></li>
+                    <li><a href="#">Көз бояулары</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-owner">Made by Ainiet</span>
+            <span class="copyright">&#169; 2025 Ainiet</span>
+        </div>
+    </footer>
+
+    <!--==JavaScript=======================-->
+    <script>
+        const addToCartBtn = document.getElementById("addToCart");
+
+        addToCartBtn?.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            const product = {
+                title: "Жапсырма тырнақ",
+                price: "2000",
+                quantity: document.querySelector(".quantity input").value,
+                image: "images/n3.jpg"
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push(product);
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            window.location.href = "cart.html";
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>Төлем беті</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background: #fff4f4;
+            padding: 40px;
+        }
+        .qr-box img {
+            max-width: 300px;
+            border: 4px solid #ffb6c1;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .total-amount {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #d43f52;
+        }
+        .success-msg {
+            display: none;
+            font-size: 22px;
+            color: green;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        button {
+            margin-top: 30px;
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #f08ba7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e47292;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #c4c4c4;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .back-btn:hover {
+            background-color: #a0a0a0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💳 Kaspi арқылы төлем жасау</h1>
+
+    <div class="total-amount" id="totalAmount">Жалпы сома: 0₸</div>
+
+    <p>📱 Kaspi қосымшасы арқылы төмендегі QR кодты сканерлеңіз:</p>
+
+    <div class="qr-box">
+        <img src="images/QR.png" alt="Kaspi QR коды">
+    </div>
+
+    <button onclick="confirmPayment()">✅ Төлем жасалды</button>
+
+    <div class="success-msg" id="successMsg">Төлем қабылданды! Рахмет 💖</div>
+
+    <br>
+    <a href="cart.html" class="back-btn">← Артқа қайту</a>
+
+    <script>
+        // Жалпы соманы есептеу
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let total = 0;
+        cart.forEach(item => {
+            total += parseFloat(item.price) * parseInt(item.quantity);
+        });
+        document.getElementById('totalAmount').innerText = "Жалпы сома: " + total.toLocaleString('ru-RU') + '₸';
+
+        function confirmPayment() {
+            // Себетті тазалау
+            localStorage.removeItem('cart');
+            // Хабарлама шығару
+            document.getElementById('successMsg').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

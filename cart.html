@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Себет</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 40px;
+            background: #fff4f4;
+        }
+        .cart-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        td, th {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        img {
+            width: 50px;
+            vertical-align: middle;
+        }
+        .clear-btn {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .clear-btn button {
+            padding: 10px 20px;
+            background-color: crimson;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #f8cdd6; /* Нежно-розовый */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        .back-btn:hover {
+            background-color: #f4b3c2; /* Аздап қоюлау hover түсі */
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h2>🛒Сіздің себетіңіз</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Өнім</th>
+                    <th>Бағасы</th>
+                    <th>Саны</th>
+                    <th>Жалпы</th>
+                    <th>Жою</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="total">Жалпы сома: <span>0₸</span></div>
+        <div class="clear-btn">
+            <!-- Себетті тазалау орнына төлемге өту батырмасы -->
+            <button onclick="goToPayment()">Төлемге өту</button>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">Басты бетке оралу</a>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const tbody = document.querySelector('tbody');
+        const totalBox = document.querySelector('.total span');
+
+        function renderCart() {
+            let total = 0;
+            tbody.innerHTML = '';
+
+            cart.forEach((item, index) => {
+                const price = parseFloat(item.price);
+                const quantity = parseInt(item.quantity);
+                const itemTotal = price * quantity;
+                total += itemTotal;
+
+                const row = `<tr>
+                    <td><img src="${item.image}"> ${item.title}</td>
+                    <td>${price.toLocaleString('ru-RU')}₸</td>
+                    <td>${quantity}</td>
+                    <td>${itemTotal.toLocaleString('ru-RU')}₸</td>
+                    <td><button onclick="removeItem(${index})">🗑️</button></td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+
+            totalBox.innerText = total.toLocaleString('ru-RU') + '₸';
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function clearCart() {
+            localStorage.removeItem('cart');
+            cart = [];
+            renderCart();
+        }
+
+        // Төлем бетіне өту функциясы
+        function goToPayment() {
+            if (cart.length === 0) {
+                alert("Себет бос, алдымен өнім қосыңыз.");
+                return;
+            }
+            // payment.html деген бет болуы керек немесе оны өзің құр
+            window.location.href = "payment.html";
+        }
+
+        renderCart();
+    </script>
+</body>
+</html>

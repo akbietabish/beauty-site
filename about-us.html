@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Us</title>
+  <link rel="stylesheet" href="about-us.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Modal style */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .close {
+      color: red;
+      float: right;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="about-section">
+    <h1>Біз туралы</h1>
+    <p>Бұл косметика бренді – екі жақын құрбының арманы мен еңбегінің нәтижесі. Біз сұлулық пен сенімділікке құштар екі құрбы табиғи және сапалы өнімдерді жасау арқылы, біз теріңіздің денсаулығын және жарқырауын қамтамасыз еткіміз келеді.</p>
+    <p>Біздің идея – нарықтағы жоғары сапалы, қолжетімді және қауіпсіз косметика өнімдерін жасау болды. Әрбір өнімімізді ерекше қамқорлықпен, өзіміздің теріміз бен достарымыздың пікірін ескере отырып әзірлейміз.</p>
+  </div>
+
+  <h2 style="text-align:center">Біздің команда</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="images/a1.jpg" alt="Aisulu" class="profile-img" />
+        <div class="container">
+          <h2>Айсұлу Елемес</h2>
+          <p class="title">Applied mathematics in digital economy</p>
+          <p>Адамның басшысы - ақыл, жетекшісі - талап, шолғыншысы - ой жолдасы - кәсіп, қорғаны - сабыр, қорғаушысы - мінез.</p>
+          <p>aisulu.elemes@narxoz.kz</p>
+          <p><button class="button" onclick="openModal('modal1')">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="images/a2.jpg" alt="Aqniet" class="profile-img" />
+        <div class="container">
+          <h2>Ақниет Абиш</h2>
+          <p class="title">Applied mathematics in digital economy</p>
+          <p>Біздің миссия: Білім мен тәрбиені қатар беріп, САНАЛЫ ҰРПАҚ қалыптастыру.✨</p>
+          <p>akniet.abish@narxoz.kz</p>
+          <p><button class="button" onclick="openModal('modal2')">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Айсұлу -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h3>Айсұлу Елемес</h3>
+      <p>Телефон: +7 777 745 4730</p>
+    </div>
+  </div>
+
+  <!-- Modal for Ақниет -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h3>Ақниет Абиш</h3>
+      <p>Телефон: +7 747 212 7929</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Терезе сыртынан басқанда жабу
+    window.onclick = function(event) {
+      const modal1 = document.getElementById("modal1");
+      const modal2 = document.getElementById("modal2");
+      if (event.target === modal1) modal1.style.display = "none";
+      if (event.target === modal2) modal2.style.display = "none";
+    }
+  </script>
+</body>
+</html>

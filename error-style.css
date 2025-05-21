@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.error-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffe4e1;
+    border: 1px solid #ffccd5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffb6c1;
+    text-align: center;
+}
+
+h1 {
+    color: #c0392b;
+}
+
+.contact p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.phone-number {
+    font-size: 22px;
+    font-weight: bold;
+    color: #e91e63;
+}
+
+.rules {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.rules h2 {
+    color: #b22222;
+    margin-bottom: 10px;
+}
+
+.rules ul {
+    list-style: square;
+    padding-left: 20px;
+}
+
+.rules li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #db7093;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #c71585;
+}

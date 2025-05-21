@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ainiet - премиальная косметика и уход за собой в Казахстане. Натуральные ингредиенты, высокое качество, широкий ассортимент.">
+    <meta name="keywords" content="косметика, уход за кожей, макияж, парфюмерия, Ainiet, Казахстан">
+    
+    <title>Ainiet | Премиальная косметика и уход</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="stylesheet" href="beauty-style.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="font" crossorigin>
+    <link rel="preload" href="js/main.min.js" as="script">
+    
+    <!-- Favicon with multiple sizes -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo with proper alt text -->
+                <a href="index.html" class="logo" aria-label="Ainiet - Главная страница">
+                    <img src="images/logo.webp" width="120" height="40" alt="Логотип Ainiet" loading="lazy">
+                </a>
+                
+                <!-- Mobile menu toggle -->
+                <button class="navbar__toggle" aria-expanded="false" aria-label="Меню">
+                    <span class="navbar__toggle-icon"></span>
+                </button>
+                
+                <!-- Search form with ARIA attributes -->
+                <form class="search" role="search">
+                    <label for="search-input" class="visually-hidden">Поиск</label>
+                    <input type="search" id="search-input" placeholder="Поиск продуктов..." required>
+                    <button type="submit" aria-label="Искать">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+                
+                <!-- Navigation actions -->
+                <div class="navbar__actions">
+                    <a href="login.html" class="navbar__action" aria-label="Личный кабинет">
+                        <i class="far fa-user" aria-hidden="true"></i>
+                        <span class="navbar__action-text">Войти</span>
+                    </a>
+                    <a href="cart.html" class="navbar__action" aria-label="Корзина">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="navbar__action-text">Корзина</span>
+                        <span class="cart-count" aria-live="polite">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <span class="hero__badge">Новая коллекция</span>
+                    <h1 class="hero__title">Красота начинается <em>с тебя</em>...</h1>
+                    <p class="hero__description">Ainiet - ваш надежный партнер в подчеркивании естественной красоты. Мы ценим нежность, чистоту и самопринятие.</p>
+                    <ul class="hero__features">
+                        <li>Уход за кожей</li>
+                        <li>Декоративная косметика</li>
+                        <li>Уход за волосами</li>
+                        <li>Парфюмерия</li>
+                    </ul>
+                    <div class="hero__cta">
+                        <a href="#products" class="btn btn--primary">Купить сейчас</a>
+                        <a href="#about" class="btn btn--outline">Узнать больше</a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <img src="images/hero.webp" width="600" height="600" alt="Косметические продукты Ainiet" loading="eager">
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section class="categories">
+            <div class="container">
+                <div class="categories__grid">
+                    <article class="category-card">
+                        <img src="images/s1.webp" width="400" height="400" alt="Натуральный зеленый лосьон" loading="lazy" class="category-card__image">
+                        <div class="category-card__content">
+                            <h3 class="category-card__title">Натуральный зеленый лосьон</h3>
+                            <p class="category-card__subtitle">Уход за кожей</p>
+                            <a href="#" class="category-card__link" aria-label="Подробнее о натуральном лосьоне"></a>
+                        </div>
+                    </article>
+                    
+                    <article class="category-card">
+                        <img src="images/s2.webp" width="400" height="400" alt="3-в-1 крем" loading="lazy" class="category-card__image">
+                        <div class="category-card__content">
+                            <h3 class="category-card__title">3-в-1 крем</h3>
+                            <p class="category-card__subtitle">Уход за кожей</p>
+                            <a href="#" class="category-card__link" aria-label="Подробнее о 3-в-1 креме"></a>
+                        </div>
+                    </article>
+                    
+                    <article class="category-card">
+                        <img src="images/s3.webp" width="400" height="400" alt="Коллекция парфюмерии" loading="lazy" class="category-card__image">
+                        <div class="category-card__content">
+                            <h3 class="category-card__title">Коллекция парфюмерии</h3>
+                            <p class="category-card__subtitle">Уход за телом</p>
+                            <a href="#" class="category-card__link" aria-label="Подробнее о парфюмерии"></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Новые поступления</h2>
+                    <div class="filter-tabs" role="tablist">
+                        <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">Все</button>
+                        <button class="filter-tab" data-filter="skin" role="tab" aria-selected="false">Кожа</button>
+                        <button class="filter-tab" data-filter="makeup" role="tab" aria-selected="false">Макияж</button>
+                        <button class="filter-tab" data-filter="nail" role="tab" aria-selected="false">Ногти</button>
+                    </div>
+                </header>
+                
+                <div class="products__grid">
+                    <!-- Product items will be loaded here dynamically -->
+                    <!-- Example product item -->
+                    <article class="product-card" data-category="skin">
+                        <figure class="product-card__image-wrapper">
+                            <img src="images/n1.webp" width="300" height="300" alt="Гель для умывания" loading="lazy" class="product-card__image">
+                            <span class="product-card__category">Кожа</span>
+                        </figure>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">
+                                <a href="product_page1.html">Гель для умывания</a>
+                            </h3>
+                            <div class="product-card__price">
+                                <span class="current-price">₸20</span>
+                                <span class="original-price">₸25</span>
+                                <span class="discount-badge">-20%</span>
+                            </div>
+                            <button class="btn btn--add-to-cart" data-product-id="1">
+                                <i class="fas fa-shopping-cart" aria-hidden="true"></i> В корзину
+                            </button>
+                        </div>
+                    </article>
+                    
+                    <!-- More product items would be here -->
+                </div>
+                
+                <div class="text-center">
+                    <a href="catalog.html" class="btn btn--outline">Посмотреть все товары</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Banner -->
+        <section class="promo-banner">
+            <div class="container">
+                <div class="promo-banner__content">
+                    <h2 class="promo-banner__title">Специальное предложение</h2>
+                    <p class="promo-banner__text">Получите скидку 15% на первую покупку</p>
+                    <a href="#" class="btn btn--white">Получить скидку</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Products -->
+        <section class="popular-products">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Популярные товары</h2>
+                    <a href="popular.html" class="section-link">Смотреть все</a>
+                </header>
+                
+                <div class="products-carousel">
+                    <!-- Popular products carousel items -->
+                    <div class="products-carousel__item">
+                        <article class="product-card">
+                            <!-- Product card content -->
+                        </article>
+                    </div>
+                    <!-- More carousel items -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features__grid">
+                    <div class="feature">
+                        <i class="fas fa-truck feature__icon" aria-hidden="true"></i>
+                        <h3 class="feature__title">Тегін жеткізу</h3>
+                        <p class="feature__description">Тапсырыс берер кезде 15 000 ₸</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <i class="fas fa-undo feature__icon" aria-hidden="true"></i>
+                        <h3 class="feature__title">Тауарды қайтару</h3>
+                        <p class="feature__description">14 тәулік ішінде</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <i class="fas fa-lock feature__icon" aria-hidden="true"></i>
+                        <h3 class="feature__title">Қауіпсіз төлем</h3>
+                        <p class="feature__description">100% төлем қорғанысы</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <i class="fas fa-headset feature__icon" aria-hidden="true"></i>
+                        <h3 class="feature__title">Қолдау 24/7</h3>
+                        <p class="feature__description">Әрдайым қолжетімді</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Partners -->
+        <section class="brands">
+            <div class="container">
+                <h2 class="section-title">Наши партнеры</h2>
+                <div class="brands__slider">
+                    <div class="brands__slide">
+                        <img src="images/brand1.webp" width="150" height="80" alt="Бренд партнер" loading="lazy">
+                    </div>
+                    <!-- More brand slides -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter__content">
+                    <h2 class="newsletter__title">Подпишитесь на рассылку</h2>
+                    <p class="newsletter__text">Получайте эксклюзивные предложения и новости о продуктах</p>
+                    <form class="newsletter__form">
+                        <label for="email-input" class="visually-hidden">Email адрес</label>
+                        <input type="email" id="email-input" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn--primary">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col footer__col--about">
+                    <a href="index.html" class="footer__logo">
+                        <img src="images/logo-white.webp" width="120" height="40" alt="Логотип Ainiet" loading="lazy">
+                    </a>
+                    <p class="footer__about-text">
+                        Ainiet - это не просто косметика, это выбор тех, кто ценит себя. Наши продукты сочетают натуральные ингредиенты, высокое качество и современные тенденции.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Мы в Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Мы в Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Мы в TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Меню</h3>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Категории</h3>
+                    <ul class="footer__links">
+                        <li><a href="skin-care.html">Уход за кожей</a></li>
+                        <li><a href="hair-care.html">Уход за волосами</a></li>
+                        <li><a href="makeup.html">Макияж</a></li>
+                        <li><a href="perfume.html">Парфюмерия</a></li>
+                        <li><a href="nail-care.html">Уход за ногтями</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Помощь</h3>
+                    <ul class="footer__links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Доставка</a></li>
+                        <li><a href="returns.html">Возврат</a></li>
+                        <li><a href="privacy.html">Конфиденциальность</a></li>
+                        <li><a href="terms.html">Условия использования</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Контакты</h3>
+                    <address class="footer__contacts">
+                        <p><i class="fas fa-map-marker-alt"></i> г. Алматы, ул. Достык 123</p>
+                        <p><i class="fas fa-phone"></i> +7 (777) 123 4567</p>
+                        <p><i class="fas fa-envelope"></i> info@ainiet.kz</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2025 Ainiet. Все права защищены.</p>
+                <div class="footer__payment-methods">
+                    <img src="images/visa.webp" width="40" height="25" alt="Visa" loading="lazy">
+                    <img src="images/mastercard.webp" width="40" height="25" alt="Mastercard" loading="lazy">
+                    <img src="images/kaspi.webp" width="40" height="25" alt="Kaspi" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.min.js" defer></script>
+    
+    <!-- About Us / Contact Section -->
+<section class="about-org">
+    <div class="container">
+        <div class="about-org__content">
+            <img src="https://ainiet.kz/images/logo.webp" alt="Ainiet логотип" class="about-org__logo">
+            <h2 class="about-org__name">Ainiet</h2>
+            <p class="about-org__desc">Премиальная косметика и средства ухода в Казахстане</p>
+            <p class="about-org__address">ул. Достык 123, Алматы, Казахстан</p>
+            <p class="about-org__phone">Телефон: <a href="tel:+77771234567">+7 777 123 4567</a></p>
+        </div>
+    </div>
+</section>
